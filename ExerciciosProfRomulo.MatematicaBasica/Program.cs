@@ -10,7 +10,8 @@ namespace ExerciciosProfRomulo.MatematicaBasica
     {
         static void Main(string[] args)
         {
-            mediaaritmetica();
+            long numero = Convert.ToInt64(Console.ReadLine());
+            Console.WriteLine($"\n{exercicio8_(numero)}");
             
         }
 
@@ -68,6 +69,74 @@ namespace ExerciciosProfRomulo.MatematicaBasica
             }
                         
         }
+
+        private static void exercicio6()
+        {
+            int contador = 1;
+            
+            do
+            {                
                 
+                if(contador%2==0)
+                {
+                    Console.ForegroundColor = ConsoleColor.Magenta;
+                    Console.WriteLine(contador);
+                    
+                }
+                contador++;
+            } while (contador <= 1);
+
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("Acabou!!!!!!!");
+           
+        }
+
+        private static void exerceio7()
+        {
+            int contador = 100;
+
+            do
+            {
+                Console.WriteLine(contador);
+                contador--;
+            } while (contador >= 0);
+        }
+
+        private static void exercicio8()
+        {
+            long num;
+            long contador = 1;
+            long fatorial;
+
+            Console.WriteLine("Fatorial de qual número?");
+            num = long.Parse(Console.ReadLine());
+
+            fatorial = num;
+
+            do
+            {
+                fatorial = fatorial * contador;                                
+                contador++;
+                                
+            } while (contador < num);
+
+            Console.WriteLine(fatorial);
+            
+        }
+        private static long exercicio8_(long numero) 
+        {
+            //long numero = Convert.ToInt64(Console.ReadLine());
+            //Console.WriteLine($"\n{exercicio8_(numero)}");
+
+            if (numero == 0)
+            {
+                return 1;
+            }
+            else 
+            {
+                return numero * exercicio8_(numero -1);
+            }
+        }
+
     }
 }
